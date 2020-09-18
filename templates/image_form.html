@@ -1,0 +1,40 @@
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    {% include 'cdnlines.html' %}
+</head>
+<body>
+<style>
+    input{
+        margin-top: -5px;
+    }
+    body{
+        background-color: lightblue;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="offset-md-3 col-md-5"><br>
+            <h3 class="text-center">Enter Student Details...</h3>
+           <form method = "POST" enctype="multipart/form-data">
+                {% csrf_token %}
+           <table class = 'table table-light' style="border-radius:10px;background-color:lightgrey;">
+               {% for field in sform %}
+                <tr>
+                <th>{{ field.label_tag }}</th>
+                <td>{{ field }}</td>
+                </tr>
+               {% endfor %}
+           </table>
+               <center>
+                <input type="submit" value="Submit" class="btn btn-success">
+                <input type="reset" value="Clear" class="btn btn-danger">
+                   </center>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

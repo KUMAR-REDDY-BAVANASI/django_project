@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Images</title>
+    {% include 'cdnlines.html' %}
+</head>
+<body>
+<style>
+    .pic{
+        max-width: 100px;
+        max-height: 100px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+    body{
+        background-color: lightblue;
+    }
+    #a1{
+        color: red;
+    }
+
+</style>
+<h3 class="text-center">Students Datails</h3>
+<div class="container-fluid">
+    <div class="row">
+        <div class="offset-md-2 col-md-8">
+            {% if imgs %}
+                <table class="table table-bordered text-center">
+                    <thead class="bg-success text-white">
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Age</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>Location</th>
+                            <th>Image</th>
+                            <th>Resume</th>
+                            <th>Update Action</th>
+                            <th>Delete Action</th>
+                        </tr>
+                    </thead>
+                {% for i in imgs %}
+                    <tbody class="bg-dark text-white">
+                        <tr>
+                            <td>{{ i.first_name }}</td>
+                            <td>{{ i.last_name }}</td>
+                            <td>{{ i.age }}</td>
+                            <td>{{ i.mobile }}</td>
+                            <td>{{ i.email }}</td>
+                            <td>{{ i.location }}</td>
+                            <td><img  src="{{ i.photo.url }}" class="img-responsive pic" /></td>
+                            <td><a href="{{ i.resume.url }}" class="btn btn-primary">Download</a></td>
+                            <td>
+                                <a href="/update/{{ i.id }}" class="btn btn-success">Update</a></td>
+                            <td><a href="/delete/{{ i.id }}" class="btn btn-danger">Delete</a></td>
+                        </tr>
+                    </tbody>
+                {% endfor %}
+                </table>
+            {% else %}
+            <h2>No Data Found</h2>
+            {% endif %}
+        <a id="a1" href="/image_form/" class="btn btn-warning">Add New Student</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
