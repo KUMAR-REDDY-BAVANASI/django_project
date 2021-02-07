@@ -25,7 +25,7 @@ SECRET_KEY = 'mw$n())@9c2#72n+yo$17qx^3+7)f+wtw62&4c@5a5^td_%s!('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -144,7 +144,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
 
-
+'''
 AWS_ACCESS_KEY_ID = 'AKIAXYTNL52TL6NHQHRT'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'demo.cloudkumar.site'
@@ -160,7 +160,7 @@ STATICFILES_DIRS = [
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'ImagesAndFilesUpload_Project.storages.MediaStore'
-
+'''
 
 '''
 <?xml version="1.0" encoding="UTF-8"?>
