@@ -52,10 +52,9 @@ $ docker build . -t django_project
 
 8. Publish the Docker image to Dockerhub:
 ```
-$ docker tag django_ec2 <DOCKERHUB_USERNAME>/django_project
+$ docker tag django_project <DOCKERHUB_USERNAME>/django_project
 $ docker push <DOCKERHUB_USERNAME>/django_project
 ```
 
-9. Deploy on AWS EC2 as outlined in this (https://stackabuse.com/deploying-django-applications-to-aws-ec2-with-docker/)
+9. Deploy on AWS EC2 as outlined in this (deploying-django-applications-to-aws-ec2-with-docker/)
 
-## Contribution
