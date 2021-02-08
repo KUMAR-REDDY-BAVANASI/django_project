@@ -8,9 +8,9 @@ WORKDIR /django_project
 
 RUN pip3 install -r requirements.txt
 
-RUN python ImagesAndFilesUpload_Project/manage.py makemigrations
+RUN python manage.py makemigrations
 
-RUN python ImagesAndFilesUpload_Project/manage.py migrate
+RUN python manage.py migrate
 
-CMD [ "python", "ImagesAndFilesUpload_Project/manage.py", "runserver", "0.0.0.0:8000" ]
+CMD [ "python", "manage.py", "runserver", "0.0.0.0:8000" ]
 
